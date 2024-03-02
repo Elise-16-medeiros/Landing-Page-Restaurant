@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${josefin.variable} ${cormorant.variable}`}>
+			<body className={`${josefin.variable} ${cormorant.variable} bg-stone-50`}>
 				{children}
 			</body>
 		</html>

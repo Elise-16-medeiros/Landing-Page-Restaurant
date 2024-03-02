@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Josefin_Sans, Cormorant_Infant } from "next/font/google";
 import "./globals.css";
+import AuthProvider from "./_providers/auth";
+import Footer from "./_components/Footer";
 
 const josefin = Josefin_Sans({
 	subsets: ["latin"],
@@ -27,7 +29,10 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${josefin.variable} ${cormorant.variable} bg-stone-50`}>
-				{children}
+				<AuthProvider>
+					{children}
+					<Footer />
+				</AuthProvider>
 			</body>
 		</html>
 	);

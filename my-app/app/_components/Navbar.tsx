@@ -6,6 +6,7 @@ import { HiXMark } from "react-icons/hi2";
 import { BiMenuAltRight } from "react-icons/bi";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { linksData } from "../_lib/data";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -13,6 +14,10 @@ const Navbar = () => {
 		setIsOpen(!isOpen);
 	};
 
+	const { data } = useSession();
+	const handleLoginClick = async () => {
+		await signIn();
+	};
 	return (
 		<nav className="bg-[#292E36] p-4">
 			<div className="container mx-auto flex items-center justify-between">
@@ -26,6 +31,15 @@ const Navbar = () => {
 				<div className="text-white flex gap-3">
 					<FaFacebook className="w-[24px] h-[23px] cursor-pointer hover:text-[#E1B168]" />
 					<FaInstagram className="w-[24px] h-[23px] cursor-pointer hover:text-[#E1B168]" />
+
+					{data?.user ? (
+						<div>
+							<button onClick={() => signOut()}>Logout</button>
+							<h1>{data.user.name}</h1>
+						</div>
+					) : (
+						<button onClick={handleLoginClick}>Login</button>
+					)}
 				</div>
 
 				<div className="md:hidden">

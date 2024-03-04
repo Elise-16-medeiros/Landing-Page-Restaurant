@@ -5,7 +5,7 @@ import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
 const Vectors = () => {
 	return (
 		<section className="bg-[#FFF8F5] w-full h-[340px] md:h-[230px]">
-			<div className="flex flex-col justify-around items-center gap-8 pt-20 px-5 md:flex-row">
+			<div className="flex flex-col justify-center items-center gap-6 pt-20 px-5 md:flex-row">
 				<div className="flex items-center justify-center gap-2">
 					<span className="bg-[#292e36] w-11 h-11 flex justify-center items-center rounded-full">
 						<span>
@@ -14,7 +14,9 @@ const Vectors = () => {
 					</span>
 					<ul>
 						<li>
-							<h3 className="text-lg tracking-wide font-semibold">Locate Us</h3>
+							<h5 className="text-base tracking-wide font-semibold">
+								Locate Us
+							</h5>
 						</li>
 						<li className="text-sm">Via Cavour 25, Florence, Tuscany</li>
 					</ul>
@@ -27,7 +29,7 @@ const Vectors = () => {
 					</span>
 					<ul>
 						<li>
-							<h3 className="text-lg tracking-wide font-semibold">
+							<h3 className="text-base tracking-wide font-semibold">
 								Open Hours
 							</h3>
 						</li>
@@ -42,7 +44,7 @@ const Vectors = () => {
 					</span>
 					<ul>
 						<li>
-							<h3 className="text-lg tracking-wide font-semibold">
+							<h3 className="text-base tracking-wide font-semibold">
 								Reservation
 							</h3>
 						</li>

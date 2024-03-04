@@ -5,7 +5,7 @@ const About = () => {
 	return (
 		<>
 			<Vectors />
-			<section className="bg-[#FFF8F5] w-full h-[728px] pt-5 md:h-[428px]">
+			<section className="bg-[#FFF8F5] w-full h-[628px] pt-5 md:h-[428px]">
 				<div className="px-5 flex flex-col-reverse justify-center items-center gap-10 md:flex-row">
 					<div className="col-span-2">
 						<Image

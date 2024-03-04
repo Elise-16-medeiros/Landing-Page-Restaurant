@@ -34,3 +34,41 @@ export const linksData = [
 		slash: "/contact",
 	},
 ];
+
+type Menu = {
+	name: string;
+	description: string;
+	price: string;
+};
+export const menus: Menu[] = [
+	{
+		name: "Volutpat quis tortor",
+		description: "Lorem ipsum dolor sit amet consectetur",
+		price: "€29",
+	},
+	{
+		name: "Consequat laoreet",
+		description: "Lorem ipsum dolor sit amet consectetur",
+		price: "€100",
+	},
+	{
+		name: "Non placerat platea",
+		description: "Lorem ipsum dolor sit amet consectetur",
+		price: "€60",
+	},
+	{
+		name: "In feugiat odio",
+		description: "Lorem ipsum dolor sit amet consectetur",
+		price: "€45",
+	},
+	{
+		name: "Sed in viverra lectus",
+		description: "Lorem ipsum dolor sit amet consectetur",
+		price: "€32",
+	},
+	{
+		name: "Diam sapien",
+		description: "Lorem ipsum dolor sit amet consectetur",
+		price: "€80",
+	},
+];

@@ -71,10 +71,6 @@
 		@apply px-2 py-1 text-[#E1B168] text-center text-sm tracking-wide border-[#E1B168] border-2 rounded hover:bg-[#E1B168] hover:text-[#292E36] transition duration-150;
 	}
 
-	.link-custom-two {
-		@apply px-6 py-1 text-sm text-center capitalize text-[#292E36] tracking-widest bg-[#E1B168] border-[#E1B168] border-2 rounded hover:bg-[#292E36] hover:text-[#E1B168] transition duration-150;
-	}
-
 	.navbar-links {
 		@apply text-white text-base font-normal tracking-wide hover:text-[#E1B168] duration-300;
 	}

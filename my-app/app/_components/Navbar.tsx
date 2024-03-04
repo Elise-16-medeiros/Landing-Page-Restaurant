@@ -31,7 +31,7 @@ const Navbar = () => {
 
 	return (
 		<nav className="bg-[#292E36] p-4 flex justify-between items-center">
-			<div className="flex items-center gap-3">
+			<div className=" hidden md:flex md:items-center md:gap-3">
 				{data?.user ? (
 					<>
 						{linksData.map((link) => (
@@ -72,12 +72,15 @@ const Navbar = () => {
 							</Button>
 						</div>
 					) : (
-						<>
-							<Button onClick={handleLogoutClick} className="navbar-links">
+						<div>
+							<Button
+								onClick={handleLogoutClick}
+								className="invisible navbar-links md:visible"
+							>
 								Login
 								<IoIosLogIn size={20} className="ml-1" />
 							</Button>
-						</>
+						</div>
 					)}
 				</>
 			</div>

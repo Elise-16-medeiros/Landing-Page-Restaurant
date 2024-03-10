@@ -1,0 +1,46 @@
+const [showToast, setShowToast] = useState(false); 
+							setShowToast(true);
+
+{!showToast && (
+									<Button
+										onClick={handleBookingSubmit}
+										disabled={!hour || !date}
+										variant="custom"
+									>
+										Reserve
+									</Button>
+								)}
+								{showToast && (
+									<div>
+										<Card>
+											<CardHeader>
+												<CardTitle>Create project</CardTitle>
+												<CardDescription>
+													Deploy your new project in one-click.
+												</CardDescription>
+											</CardHeader>
+										</Card>
+									</div>
+								)}
+							</div>
+		<Alert className="rounded w-64 h-24 bottom-4">
+								<AlertTitle className="text-center py-1">
+									Confirm reservation?
+								</AlertTitle>
+								<AlertDescription className="flex justify-around items-center py-2">
+									{date && (
+										<div className="flex items-center gap-2">
+											<h2 className="font-bold">Date:</h2>
+											<h4>{format(date, "dd MMMM")}</h4>
+										</div>
+									)}
+
+									{hour && (
+										<div className="flex items-center gap-1">
+											<h2 className="font-bold">Hour:</h2>
+											<h4>{hour}</h4>
+										</div>
+									)}
+								</AlertDescription>
+							</Alert>
+                            

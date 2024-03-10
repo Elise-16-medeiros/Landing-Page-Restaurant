@@ -1,22 +1,31 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useSession } from "next-auth/react";
+import Image from "next/image";
+import { format, setHours, setMinutes } from "date-fns";
 import { Calendar } from "./ui/calendar";
+import {
+	AlertDialog,
+	AlertDialogAction,
+	AlertDialogCancel,
+	AlertDialogContent,
+	AlertDialogDescription,
+	AlertDialogFooter,
+	AlertDialogHeader,
+	AlertDialogTitle,
+	AlertDialogTrigger,
+} from "./ui/alert-dialog";
+import { Button } from "./ui/button";
 import imageBg from "@/public/bg_reservation.png";
 import { generateDayTimeList } from "../_helpers/hours";
-import { Button } from "./ui/button";
-import { format, setHours, setMinutes } from "date-fns";
-import { Alert, AlertTitle, AlertDescription } from "./ui/alert";
-import Image from "next/image";
 import { saveBooking } from "../_actions/save_booking";
-import { useSession } from "next-auth/react";
 
 const Reservation = () => {
 	const { data } = useSession();
 
 	const [date, setDate] = useState<Date | undefined>(undefined);
 	const [hour, setHour] = useState<string | undefined>();
-	const [showToast, setShowToast] = useState(false);
 
 	const handleDateClick = (date: Date | undefined) => {
 		setDate(date);
@@ -32,8 +41,6 @@ const Reservation = () => {
 	}, [date]);
 
 	const handleBookingSubmit = async () => {
-		setShowToast(true);
-
 		try {
 			if (!hour || !date || !data?.user) {
 				return;
@@ -103,44 +110,46 @@ const Reservation = () => {
 								</div>
 							</div>
 						</div>
-						<div className="flex flex-col justify-end items-center mt-10">
-							<Alert className="rounded w-64 h-24 bottom-4">
-								<AlertTitle className="text-center py-1">
-									Confirm reservation?
-								</AlertTitle>
-								<AlertDescription className="flex justify-around items-center py-2">
-									{date && (
-										<div className="flex items-center gap-2">
-											<h2 className="font-bold">Date:</h2>
-											<h4>{format(date, "dd MMMM")}</h4>
-										</div>
-									)}
+						<div className="flex flex-col justify-end items-center mt-10 z-50">
+							<AlertDialog>
+								<AlertDialogTrigger asChild>
+									<Button variant="custom2">Confirm Booking</Button>
+								</AlertDialogTrigger>
+								<AlertDialogContent className="bg-zinc-100">
+									<AlertDialogHeader>
+										<AlertDialogTitle>
+											Would you like confirm booking?
+										</AlertDialogTitle>
+										<AlertDialogDescription className="flex justify-around items-center py-2">
+											{date && (
+												<div className="flex items-center gap-2">
+													<h2 className="font-bold">Date:</h2>
+													<h4>{format(date, "dd MMMM")}</h4>
+												</div>
+											)}
 
-									{hour && (
-										<div className="flex items-center gap-1">
-											<h2 className="font-bold">Hour:</h2>
-											<h4>{hour}</h4>
-										</div>
-									)}
-								</AlertDescription>
-							</Alert>
-
-							<div>
-								{!showToast && (
-									<Button
-										onClick={handleBookingSubmit}
-										disabled={!hour || !date}
-										variant="custom"
-									>
-										Reserve
-									</Button>
-								)}
-								{showToast && (
-									<div>
-										<p>Esta é a mensagem no card.</p>
-									</div>
-								)}
-							</div>
+											{hour && (
+												<div className="flex items-center gap-1">
+													<h2 className="font-bold">Hour:</h2>
+													<h4>{hour}</h4>
+												</div>
+											)}
+										</AlertDialogDescription>
+									</AlertDialogHeader>
+									<AlertDialogFooter>
+										<AlertDialogCancel className="bg-[#f04747] text-white border-none hover:bg-[#f25a5a] hover:text-white">
+											Cancel
+										</AlertDialogCancel>
+										<AlertDialogAction
+											onClick={handleBookingSubmit}
+											disabled={!hour || !date}
+											className="bg-slate-200 border-none rounded hover:bg-slate-200/45"
+										>
+											Confirm
+										</AlertDialogAction>
+									</AlertDialogFooter>
+								</AlertDialogContent>
+							</AlertDialog>
 						</div>
 					</span>
 				</div>

@@ -31,6 +31,7 @@ export default function RootLayout({
 			<body className={`${josefin.variable} ${cormorant.variable} bg-stone-50`}>
 				<AuthProvider>
 					{children}
+
 					<Footer />
 				</AuthProvider>
 			</body>

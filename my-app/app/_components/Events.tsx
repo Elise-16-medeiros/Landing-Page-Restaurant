@@ -41,7 +41,7 @@ const Events = () => {
 
 	return (
 		<section className="w-full h-60 p-5 mt-20">
-			<div className="before:content[''] before:border-2 before:absolute before:w-[169px] before:border-[#E1B168] after:content-[''] after:border-2 after:w-[169px] after:border-[#E1B168] after:absolute">
+			<div className="before:content[''] before:border-2 before:absolute before:w-[178px] before:border-[#E1B168] after:content-[''] after:border-2 after:w-[178px] after:border-[#E1B168] after:absolute">
 				<h2 className="py-1 tracking-wide uppercase">Weddings & Events</h2>
 			</div>
 

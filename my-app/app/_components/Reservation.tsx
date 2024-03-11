@@ -95,10 +95,10 @@ const Reservation = () => {
 						Book Your Table
 					</h1>
 				</div>
-				<div className="z-30 w-full max-w-sm h-full max-h-[650px] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] p-[30px] text-white backdrop-blur-sm bg-black/30 md:max-w-4xl">
+				<div className="z-30 w-full max-w-sm h-full max-h-[750px] mt-10 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] p-[30px] text-white backdrop-blur-sm bg-black/30 md:max-w-4xl md:max-h-[650px]">
 					<span className="z-50">
 						<div className="flex justify-center items-center mt-8">
-							<div className="grid grid-cols-2 gap-8 place-content-center place-items-center">
+							<div className="grid grid-cols-1 gap-8 place-content-center place-items-center md:grid-cols-2">
 								<div>
 									<Calendar
 										mode="single"

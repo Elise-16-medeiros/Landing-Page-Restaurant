@@ -17,15 +17,19 @@ import {
 	AlertDialogTrigger,
 } from "./ui/alert-dialog";
 import { Button } from "./ui/button";
+import { toast } from "sonner";
 import imageBg from "@/public/bg_reservation.png";
 import { generateDayTimeList } from "../_helpers/hours";
 import { saveBooking } from "../_actions/save_booking";
+import { useRouter } from "next/navigation";
 
 const Reservation = () => {
+	const router = useRouter();
 	const { data } = useSession();
 
 	const [date, setDate] = useState<Date | undefined>(undefined);
 	const [hour, setHour] = useState<string | undefined>();
+	const [alertDialogIsOpen, setAlertDialogIsOpen] = useState(false);
 
 	const handleDateClick = (date: Date | undefined) => {
 		setDate(date);
@@ -52,6 +56,17 @@ const Reservation = () => {
 			await saveBooking({
 				date: newDate,
 				userid: (data.user as any).id,
+			});
+
+			setAlertDialogIsOpen(false);
+			setHour(undefined);
+			setDate(undefined);
+			toast("Reservation made successfully", {
+				description: format(newDate, "'For' dd MMMM HH:mm'pm.' "),
+				action: {
+					label: "To view",
+					onClick: () => router.push("/bookings"),
+				},
 			});
 		} catch (error) {
 			console.error(error);
@@ -111,7 +126,10 @@ const Reservation = () => {
 							</div>
 						</div>
 						<div className="flex flex-col justify-end items-center mt-10 z-50">
-							<AlertDialog>
+							<AlertDialog
+								open={alertDialogIsOpen}
+								onOpenChange={setAlertDialogIsOpen}
+							>
 								<AlertDialogTrigger asChild>
 									<Button variant="custom2">Confirm Booking</Button>
 								</AlertDialogTrigger>
@@ -140,6 +158,7 @@ const Reservation = () => {
 										<AlertDialogCancel className="bg-[#f04747] text-white border-none hover:bg-[#f25a5a] hover:text-white">
 											Cancel
 										</AlertDialogCancel>
+
 										<AlertDialogAction
 											onClick={handleBookingSubmit}
 											disabled={!hour || !date}

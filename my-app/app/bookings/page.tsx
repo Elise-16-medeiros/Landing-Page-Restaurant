@@ -42,7 +42,7 @@ const BookingsPage = async () => {
 					</h2>
 				)}
 
-				<div className="grid grid-cols-1 place-content-center place-items-center gap-3 md:grid-cols-3 py-3">
+				<div className="grid grid-cols-1 place-content-center place-items-center gap-3 md:grid-cols-3 py-8">
 					{confirmedBookings.map((booking) => (
 						<BookingItem key={booking.id} booking={booking} />
 					))}

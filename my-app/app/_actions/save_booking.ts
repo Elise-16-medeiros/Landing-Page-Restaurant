@@ -1,4 +1,5 @@
 "use server";
+import { revalidatePath } from "next/cache";
 import { db } from "../_lib/prisma";
 
 interface SaveBookingParams {
@@ -13,4 +14,6 @@ export const saveBooking = async (params: SaveBookingParams) => {
 			date: params.date,
 		},
 	});
+
+	revalidatePath("/bookings");
 };

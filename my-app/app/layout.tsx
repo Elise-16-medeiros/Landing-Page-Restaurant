@@ -4,6 +4,7 @@ import "./globals.css";
 import AuthProvider from "./_providers/auth";
 import Footer from "./_components/Footer";
 import { Toaster } from "./_components/ui/sonner";
+import Header from "./_components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={`${inter.className} bg-stone-50`}>
 				<AuthProvider>
+					<Header />
 					{children}
 					<Toaster />
 					<Footer />

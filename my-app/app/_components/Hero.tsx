@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 const { pretitle, title, btnText } = heroData;
 const Hero = () => {
 	return (
-		<section className=" bg-[#292E36] text-white pb-8 pt-8">
+		<section id="home" className=" bg-[#292E36] text-white pb-8 pt-8">
 			<div className="flex flex-col justify-center items-center gap-16 md:flex-row">
 				<div className="flex flex-col justify-center items-start md:ml-10">
 					<h2 className="text-xl tracking-wide md:text-[30px]">{pretitle}</h2>

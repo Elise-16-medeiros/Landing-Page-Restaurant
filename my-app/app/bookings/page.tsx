@@ -1,5 +1,4 @@
 import { getServerSession } from "next-auth";
-import Header from "../_components/Header";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
 import { db } from "../_lib/prisma";
@@ -26,7 +25,6 @@ const BookingsPage = async () => {
 
 	return (
 		<section className="bg-gray-50">
-			<Header />
 			<div className="px-5 py-6">
 				<div className="before:content[''] before:border-2 before:absolute before:w-[153px] before:border-[#E1B168] after:content-[''] after:border-2 after:w-[153px] after:border-[#E1B168] after:absolute">
 					<h1 className="py-1 tracking-wide uppercase">yours bookings</h1>

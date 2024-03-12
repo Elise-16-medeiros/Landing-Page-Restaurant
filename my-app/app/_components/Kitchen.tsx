@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Kitchen = () => {
 	return (
-		<section className="h-[906px] mt-20 px-5 md:h-[750px]">
+		<section id="Kitchen" className="h-[906px] mt-20 px-5 md:h-[750px]">
 			<div className="before:content[''] before:border-2 before:absolute before:w-[118px] before:border-[#E1B168] after:content-[''] after:border-2 after:w-[118px] after:border-[#E1B168] after:absolute">
 				<h2 className="py-1 tracking-wide uppercase">Our Kitchen</h2>
 			</div>

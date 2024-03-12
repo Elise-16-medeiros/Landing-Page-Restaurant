@@ -13,7 +13,7 @@ import { Table, TableBody, TableCell, TableRow } from "./ui/table";
 
 const Menu = () => {
 	return (
-		<section className="bg-[#292E36] h-[316px] p-5 mt-24 md:mt-16">
+		<section id="menu" className="bg-[#292E36] h-[316px] p-5 mt-24 md:mt-16">
 			<div className="before:content[''] before:border-2 before:absolute before:w-[93px] before:border-[#E1B168] after:content-[''] after:border-2 after:w-[93px] after:border-[#E1B168] after:absolute">
 				<h2 className="py-1 tracking-wide text-white uppercase">Our Menu</h2>
 			</div>

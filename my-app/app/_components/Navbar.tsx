@@ -35,7 +35,7 @@ const Navbar = () => {
 				{data?.user ? (
 					<>
 						{linksData.map((link) => (
-							<Link className="navbar-links" href={link.slash} key={link.slash}>
+							<Link className="navbar-links" href={link.hash} key={link.hash}>
 								{link.name}
 							</Link>
 						))}
@@ -46,7 +46,7 @@ const Navbar = () => {
 				) : (
 					<div className="flex items-center gap-3">
 						{linksData.map((link) => (
-							<Link className="navbar-links" href={link.slash} key={link.slash}>
+							<Link className="navbar-links" href={link.hash} key={link.hash}>
 								{link.name}
 							</Link>
 						))}
@@ -130,8 +130,8 @@ const Navbar = () => {
 									{linksData.map((link) => (
 										<Link
 											className="navbar-links"
-											href={link.slash}
-											key={link.slash}
+											href={link.hash}
+											key={link.hash}
 										>
 											{link.name}
 										</Link>
@@ -145,8 +145,8 @@ const Navbar = () => {
 									{linksData.map((link) => (
 										<Link
 											className="navbar-links"
-											href={link.slash}
-											key={link.slash}
+											href={link.hash}
+											key={link.hash}
 										>
 											{link.name}
 										</Link>

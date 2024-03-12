@@ -74,7 +74,7 @@ const Reservation = () => {
 	};
 
 	return (
-		<section className="w-full p-5 mt-[700px]">
+		<section id="reservation" className="w-full p-5 mt-[700px]">
 			<div className=" relative h-[977px]">
 				<Image
 					alt="Restaurant"
@@ -86,9 +86,9 @@ const Reservation = () => {
 					className="-z-50 object-cover"
 				/>
 				<div className="flex flex-col justify-center items-center py-8">
-					<div className="before:content[''] before:border-2 before:absolute before:w-[138px] before:border-[#E1B168] after:content-[''] after:border-2 after:w-[138px] after:border-[#bc9458] after:absolute">
+					<div className="before:content[''] before:border-2 before:absolute before:w-[130px] before:border-[#E1B168] after:content-[''] after:border-2 after:w-[130px] after:border-[#bc9458] after:absolute">
 						<h3 className="py-1 tracking-widest px-3 text-sm text-white uppercase">
-							Reservations
+							Reservation
 						</h3>
 					</div>
 					<h1 className="text-3xl text-white tracking-wide font-title pt-8">

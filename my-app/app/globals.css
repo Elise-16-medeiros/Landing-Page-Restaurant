@@ -70,6 +70,6 @@
 	}
 
 	.navbar-links {
-		@apply text-white text-base font-normal tracking-wide hover:text-[#E1B168] duration-300;
+		@apply text-white text-sm font-normal tracking-wide hover:text-[#E1B168] duration-300;
 	}
 }

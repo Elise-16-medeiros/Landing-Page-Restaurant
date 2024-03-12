@@ -11,25 +11,25 @@ export const heroData: {
 export const linksData = [
 	{
 		name: "About Us",
-		slash: "/about",
+		hash: "#about",
 	},
 	{
 		name: "Our Kitchen",
-		slash: "/Kitchen",
+		hash: "#Kitchen",
 	},
 	{
 		name: "Menu",
-		slash: "/menu",
+		hash: "#menu",
 	},
 	{
 		name: "Events",
-		slash: "/events",
+		hash: "#events",
 	},
 	{
-		name: "Reservations",
-		slash: "/reservations",
+		name: "Reservation",
+		hash: "#reservation",
 	},
-];
+] as const;
 
 type Menu = {
 	name: string;

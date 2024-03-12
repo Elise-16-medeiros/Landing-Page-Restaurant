@@ -10,10 +10,6 @@ export const heroData: {
 
 export const linksData = [
 	{
-		name: "Home",
-		slash: "/",
-	},
-	{
 		name: "About Us",
 		slash: "/about",
 	},
@@ -30,8 +26,8 @@ export const linksData = [
 		slash: "/events",
 	},
 	{
-		name: "Contact",
-		slash: "/contact",
+		name: "Reservations",
+		slash: "/reservations",
 	},
 ];
 

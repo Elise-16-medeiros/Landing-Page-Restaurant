@@ -90,3 +90,53 @@ const [showToast, setShowToast] = useState(false);
 					)}
 				</div>
 			</div> */
+
+//CARDS ICON//
+
+	<div className="flex flex-col justify-center items-center gap-6 pt-20 px-5 md:flex-row">
+				<div className="flex items-center justify-center gap-2">
+					<span className="bg-[#292e36] w-11 h-11 flex justify-center items-center rounded-full">
+						<span>
+							<MdOutlinePinDrop size={25} className="text-white" />
+						</span>
+					</span>
+					<ul>
+						<li>
+							<h5 className="text-base tracking-wide font-semibold">
+								Locate Us
+							</h5>
+						</li>
+						<li className="text-sm">Via Cavour 25, Florence, Tuscany</li>
+					</ul>
+				</div>
+				<div className="flex items-center justify-center gap-2">
+					<span className="bg-[#292e36] w-11 h-11 flex justify-center items-center rounded-full">
+						<span>
+							<FiClock size={25} className="text-white" />
+						</span>
+					</span>
+					<ul>
+						<li>
+							<h3 className="text-base tracking-wide font-semibold">
+								Open Hours
+							</h3>
+						</li>
+						<li className="text-sm">Mon To Sat 18:00 PM - 23:00 PM</li>
+					</ul>
+				</div>
+				<div className="flex items-center justify-center gap-2">
+					<span className="bg-[#292e36] w-11 h-11 flex justify-center items-center rounded-full">
+						<span>
+							<HiOutlineDevicePhoneMobile size={25} className="text-white" />
+						</span>
+					</span>
+					<ul>
+						<li>
+							<h3 className="text-base tracking-wide font-semibold">
+								Reservation
+							</h3>
+						</li>
+						<li className="text-sm">reservation_botticelli@gmail.com</li>
+					</ul>
+				</div>
+			</div>

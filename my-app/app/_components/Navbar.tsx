@@ -54,35 +54,33 @@ const Navbar = () => {
 				)}
 			</div>
 			<div>
-				<>
-					{data?.user ? (
-						<div className="flex justify-between items-center px-5 py-6">
-							<div className="flex items-center gap-3">
-								<Avatar>
-									<AvatarImage src={data.user.image ?? ""}></AvatarImage>
-								</Avatar>
-								<h2 className="font-bold text-white">{data.user.name}</h2>
-							</div>
-							<Button size="icon">
-								<IoIosLogOut
-									onClick={handleLoginClick}
-									size={20}
-									className="text-white navbar-links"
-								/>
-							</Button>
+				{data?.user ? (
+					<div className="flex justify-between items-center px-5 py-6">
+						<div className="flex items-center gap-3">
+							<Avatar>
+								<AvatarImage src={data.user.image ?? ""}></AvatarImage>
+							</Avatar>
+							<h2 className="font-bold text-white">{data.user.name}</h2>
 						</div>
-					) : (
-						<div>
-							<Button
-								onClick={handleLogoutClick}
-								className="invisible navbar-links md:visible"
-							>
-								Login
-								<IoIosLogIn size={20} className="ml-1" />
-							</Button>
-						</div>
-					)}
-				</>
+						<Button size="icon">
+							<IoIosLogOut
+								onClick={handleLoginClick}
+								size={20}
+								className="text-white navbar-links"
+							/>
+						</Button>
+					</div>
+				) : (
+					<div>
+						<Button
+							onClick={handleLogoutClick}
+							className="invisible navbar-links md:visible"
+						>
+							Login
+							<IoIosLogIn size={20} className="ml-1" />
+						</Button>
+					</div>
+				)}
 			</div>
 			<span className="md:hidden">
 				<Sheet>

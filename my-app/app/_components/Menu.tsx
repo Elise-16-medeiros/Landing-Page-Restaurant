@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import { menus } from "../_lib/data";
 import { Button } from "./ui/button";
 import {
@@ -18,7 +20,17 @@ const Menu = () => {
 				<h2 className="py-1 tracking-wide text-white uppercase">Our Menu</h2>
 			</div>
 
-			<div className="grid grid-cols-2 gap-8 place-content-center place-items-center h-64 md:flex justify-around items-center">
+			<motion.div
+				className="grid grid-cols-2 gap-8 place-content-center place-items-center h-64 md:flex justify-around items-center"
+				initial={{ y: -100, opacity: 0 }}
+				animate={{ y: 1, opacity: 1 }}
+				transition={{
+					duration: 0.8,
+					type: "tween",
+					ease: "easeIn",
+					delay: 0.7,
+				}}
+			>
 				<Dialog>
 					<DialogTrigger asChild>
 						<Button variant="custom">Dishes</Button>
@@ -126,7 +138,7 @@ const Menu = () => {
 						</div>
 					</DialogContent>
 				</Dialog>
-			</div>
+			</motion.div>
 		</section>
 	);
 };

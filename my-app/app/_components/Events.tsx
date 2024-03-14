@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
@@ -46,16 +47,45 @@ const Events = () => {
 			</div>
 
 			<div className="flex flex-col justify-center items-center gap-3 mt-11">
-				<h5 className="text-xl text-center tracking-wide font-bold pb-3 font-title">
+				<motion.h5
+					className="text-xl text-center tracking-wide font-bold pb-3 font-title"
+					initial={{ y: -100, opacity: 0 }}
+					animate={{ y: 1, opacity: 1 }}
+					transition={{
+						duration: 0.8,
+						type: "tween",
+						ease: "easeIn",
+						delay: 0.7,
+					}}
+				>
 					Meals for your weddings and events
-				</h5>
-				<p className="text-center">
+				</motion.h5>
+				<motion.p
+					className="text-center"
+					initial={{ y: 100, opacity: 0 }}
+					animate={{ y: 1, opacity: 1 }}
+					transition={{
+						duration: 0.8,
+						type: "tween",
+						ease: "easeIn",
+						delay: 0.8,
+					}}
+				>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque,
 					adipisci.
-				</p>
+				</motion.p>
 			</div>
 
-			<div className="max-w-screen-xl h-[680px] w-full mx-auto py-16 px-4 relative group">
+			<motion.div
+				className="max-w-screen-xl h-[680px] w-full mx-auto py-16 px-4 relative group"
+				initial={{ opacity: 0, scale: 0.5 }}
+				animate={{ opacity: 1, scale: 1 }}
+				transition={{
+					duration: 0.8,
+					delay: 0.8,
+					ease: "easeInOut",
+				}}
+			>
 				<div
 					style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
 					className="w-full h-full rounded-2xl bg-center bg-cover object-scale-down duration-500"
@@ -79,7 +109,7 @@ const Events = () => {
 						</div>
 					))}
 				</div>
-			</div>
+			</motion.div>
 		</section>
 	);
 };

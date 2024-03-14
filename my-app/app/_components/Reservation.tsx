@@ -22,6 +22,7 @@ import imageBg from "@/public/bg_reservation.png";
 import { generateDayTimeList } from "../_helpers/hours";
 import { saveBooking } from "../_actions/save_booking";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
 const Reservation = () => {
 	const router = useRouter();
@@ -75,7 +76,7 @@ const Reservation = () => {
 
 	return (
 		<section id="reservation" className="w-full p-5 mt-[700px]">
-			<div className=" relative h-[977px]">
+			<div className="relative h-[977px]">
 				<Image
 					alt="Restaurant"
 					src={imageBg}
@@ -96,7 +97,16 @@ const Reservation = () => {
 					</h1>
 				</div>
 				<div className="z-30 w-full max-w-sm h-full max-h-[750px] mt-10 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] p-[30px] text-white backdrop-blur-sm bg-black/30 md:max-w-4xl md:max-h-[650px]">
-					<span className="z-50">
+					<motion.span
+						className="z-50"
+						initial={{ opacity: 0, scale: 0.5 }}
+						animate={{ opacity: 1, scale: 1 }}
+						transition={{
+							duration: 0.8,
+							delay: 0.8,
+							ease: "easeInOut",
+						}}
+					>
 						<div className="flex justify-center items-center mt-8">
 							<div className="grid grid-cols-1 gap-8 place-content-center place-items-center md:grid-cols-2">
 								<div>
@@ -170,7 +180,7 @@ const Reservation = () => {
 								</AlertDialogContent>
 							</AlertDialog>
 						</div>
-					</span>
+					</motion.span>
 				</div>
 			</div>
 		</section>

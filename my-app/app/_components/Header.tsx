@@ -16,7 +16,7 @@ const Header = () => {
 						transition={{
 							duration: 0.8,
 							type: "tween",
-							ease: "easeOut",
+							ease: "easeIn",
 							delay: 0.5,
 						}}
 					>
@@ -29,7 +29,7 @@ const Header = () => {
 						transition={{
 							duration: 0.8,
 							type: "tween",
-							ease: "easeOut",
+							ease: "easeIn",
 							delay: 0.6,
 						}}
 					>
@@ -43,7 +43,7 @@ const Header = () => {
 						transition={{
 							duration: 0.8,
 							type: "tween",
-							ease: "easeOut",
+							ease: "easeIn",
 							delay: 0.7,
 						}}
 					>

@@ -2,9 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { HiXMark } from "react-icons/hi2";
 import { BiMenuAltRight } from "react-icons/bi";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { IoIosLogOut, IoIosLogIn } from "react-icons/io";
 import { LuUser } from "react-icons/lu";
 import { linksData } from "../_lib/data";
@@ -25,7 +23,7 @@ const Navbar = () => {
 		setIsOpen(!isOpen);
 	};
 
-	const { data, status } = useSession();
+	const { data } = useSession();
 	const handleLoginClick = () => signOut();
 	const handleLogoutClick = () => signIn("google");
 
